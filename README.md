@@ -15,7 +15,7 @@
 
 <h2> Definição do Problema </h2>
 <p>No problema de Localização de UPAs, existem n distritos numa região metropolitana, cuja distância entre um distrito e outro é dada pela equação da distância euclidiana: </p>
-<p align="center"><img src = "https://github.com/GiovanniBru/Localizacao-Facilidades/blob/master/imagens/distancia%20euclidiana.PNG"></p>https://github.com/GiovanniBru/Localizacao-Facilidades/blob/master/imagens/distancia%20euclidiana.PNG
+<p align="center"><img src = "https://github.com/GiovanniBru/Localizacao-Facilidades/blob/master/imagens/distancia%20euclidiana.PNG"></p>
 <p>Com isso deseja-se escolher em quais localidades as UPAs devem ser instaladas. Em regra, é obrigatório que se siga as seguintes restrições: </p> 
 <ol>
   <li> Distância entre distrito e UPA mais próxima deve ser no máximo K km; </li>
