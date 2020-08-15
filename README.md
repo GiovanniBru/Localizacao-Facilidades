@@ -5,21 +5,21 @@
 
  <h2> Sumário </h2> 
 <ol>
-	<li><a href="">Definição do Problema</a></li>
-	<li><a href="">Modelagem</a></li>
-	<li><a href="">Instruções</a></li>
-	<li><a href="">Resultados Obtidos</a></li>
-	<li><a href="">Dificuldades e Melhorias</a></li>
-	<li><a href="">Referências</a></li>
+	<li><a href="https://github.com/GiovanniBru/Localizacao-Facilidades#-defini%C3%A7%C3%A3o-do-problema-">Definição do Problema</a></li>
+	<li><a href="https://github.com/GiovanniBru/Localizacao-Facilidades#modelagem">Modelagem</a></li>
+	<li><a href="https://github.com/GiovanniBru/Localizacao-Facilidades#instru%C3%A7%C3%B5es">Instruções</a></li>
+	<li><a href="https://github.com/GiovanniBru/Localizacao-Facilidades#-resultados-obtidos">Resultados Obtidos</a></li>
+	<li><a href="https://github.com/GiovanniBru/Localizacao-Facilidades#dificuldades-e-melhorias">Dificuldades e Melhorias</a></li>
+	<li><a href="https://github.com/GiovanniBru/Localizacao-Facilidades#refer%C3%AAncias">Referências</a></li>
 </ol>
 
 <h2> Definição do Problema </h2>
 <p>No problema de Localização de UPAs, existem n distritos numa região metropolitana, cuja distância entre um distrito e outro é dada pela equação da distância euclidiana: </p>
-<p align="center"><img src = ""></p>
+<p align="center"><img src = "https://github.com/GiovanniBru/Localizacao-Facilidades/blob/master/imagens/distancia%20euclidiana.PNG"></p>https://github.com/GiovanniBru/Localizacao-Facilidades/blob/master/imagens/distancia%20euclidiana.PNG
 <p>Com isso deseja-se escolher em quais localidades as UPAs devem ser instaladas. Em regra, é obrigatório que se siga as seguintes restrições: </p> 
 <ol>
-  <li> Distância entre distrito e UPA mais próxima deve ser no máximo K km; <li>
-  <li> Distância entre distrito e segunda UPA mais próxima deve ser no máximo Y km; <li>
+  <li> Distância entre distrito e UPA mais próxima deve ser no máximo K km; </li>
+  <li> Distância entre distrito e segunda UPA mais próxima deve ser no máximo Y km; </li>
   <li> Distância entre duas UPAs de no máximo Z km.</li>
 </ol> 
 <p>É necessário que suas respectivas saídas, para resolução do problema, contenha as seguintes indicações: </p>
@@ -31,7 +31,7 @@
 
 <h2>Modelagem</h2> 
 <p>Para resolução do problema foi preciso criar <i>n</i> variáveis binárias que são representadas no distrito <i>n</i> existindo ou não uma UPA. Os valores de K, Y e Z são fornecidos no arquivo de entrada, assim como as coordenadas (X,Y) de cada distrito.</p>
-<p align="center"><img src = ""></p>
+<p align="center"><img src = "https://github.com/GiovanniBru/Localizacao-Facilidades/blob/master/imagens/modelagem.PNG"></p>
 <p><b>(a)</b>Função Objetiva: Minimizar um somatório de todas as variáveis binárias para cada distrito;</p>
 <p><b>(b)</b>Primeira Restrição: Para todo j pertencente a {1,...,n}, é feito um somatório das variáveis binárias, se a distância dij for menor que o valor K fornecido, cujo valor tem que ser maior ou igual a 1. Essa restrição indica que é preciso ter ao menos uma UPA dentro dessa distância mínima;</p>
 <p><b>(c)</b>Segunda Restrição: Para todo j pertencente a {1,...,n}, é feito um somatório das variáveis binárias, se a distância dij for menor que o valor Y fornecido, cujo valor tem que ser maior ou igual a 2. Essa restrição indica que é preciso ter ao menos duas UPA dentro dessa distância mínima;</p>
@@ -52,24 +52,24 @@
   <li>Z #Distância máxima de uma UPA para outra</li>
   <li>(x,y) #Coordenada de cada distrito</li>
 </ol>
-<p align="center"><img src = ""></p>
+<p align="center"><img src = "https://github.com/GiovanniBru/Localizacao-Facilidades/blob/master/imagens/entrada2.PNG"></p>
 <p align="center">Figura 1 - Exemplo de arquivo de entrada</p>
 <p>Executando e printando o comando <i>export_to_string()</i> , conseguimos ver a modelagem feita pelo programa, e como resultado do exemplo de “entrada2.txt” obtivemos: </p>
-<p align="center"><img src = ""></p>
+<p align="center"><img src = "https://github.com/GiovanniBru/Localizacao-Facilidades/blob/master/imagens/teste1.PNG"></p>
 <p align="center">Figura 2 - Comando "export_to_string()"</p>
 <p>Podemos observar na execução desse comando, que a função objetiva descrita em <i>obj</i> foi feita corretamente, assim como as 30 restrições <i>c</i>, e as 10 variáveis binárias também foram criadas corretamente para o problema da entrada “entrada2.txt”.</p>
 <p>Utilizamos o comando <i>print_information()</i> para obter outras informações sobre o modelo criado, como o número de variáveis e seu tipo, e o número de restrições e seu tipo. </p>
-<p align="center"><img src = ""></p>
+<p align="center"><img src = "https://github.com/GiovanniBru/Localizacao-Facilidades/blob/master/imagens/teste2.PNG"></p>
 <p align="center">Figura 3 - Comando "print_information()"</p>
 <p>Agora, executando o solver e printando sua solução através do comando <i>display()</i>, obtemos:</p>
-<p align="center"><img src = ""></p>
+<p align="center"><img src = "https://github.com/GiovanniBru/Localizacao-Facilidades/blob/master/imagens/teste3.PNG"></p>
 <p align="center">Figura 4 - Comando "display()"</p>
 <p>Através do comando acima podemos observar que o resultado da função objetiva em “objetive”, que para o arquivo de entrada “entrada2.txt” foi <b>5</b>. Também podemos observar as variáveis binárias com 1, que representam o distrito que receberá uma UPA. </p>
 <p>Em seguida, printamos a saída da maneira que foi pedida no apêndice 2 da descrição do problema, mostrando em qual distrito serão localizadas as UPAs. </p>
-<p align="center"><img src = ""></p>
+<p align="center"><img src = "https://github.com/GiovanniBru/Localizacao-Facilidades/blob/master/imagens/teste4.PNG"></p>
 <p align="center">Figura 5 - Saída do programa</p>
 <p>Por fim, plotamos os distritos em um sistema de coordenadas, pintando o lugar que receberá UPA de vermelho, e os demais de preto: </p>
-<p align="center"><img src = ""></p>
+<p align="center"><img src = "https://github.com/GiovanniBru/Localizacao-Facilidades/blob/master/imagens/plot.PNG"></p>
 <p align="center">Figura 6 - Distritos no sistema de coordenadas</p>
 
 <h2>Dificuldades e Melhorias</h2>
